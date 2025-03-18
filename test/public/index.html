@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papilio Figure Collection</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <script src="{% static 'home.js' %}" defer></script>
+</head>
+<body>
+
+<header>
+    <div class="logo">Papilio <span>Figures</span></div>
+    <nav>
+        <ul>
+            <li><a href="#">Figures</a></li>
+            <li><a href="#">Wishlist</a></li>
+            <li><a href="#">Collection</a></li>
+            <li><a href="#">Search</a></li>
+        </ul>
+    </nav>
+    <div class="cart">My Cart: $0.00</div>
+</header>
+
+<main>
+    <h2>Currently Trending</h2>
+    <div class="figure-grid">
+        {% for figurine in figurines %}
+        <div class="figure-card" onclick="goToDetails('{{ figurine.id }}')">
+            <img src="{{ figurine.image.url }}" alt="{{ figurine.name }}">
+            <p class="figure-name">{{ figurine.name }}</p>
+            <div class="price-container">
+                <span class="price-tag">${{ figurine.price }}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+
+</body>
+</html>
