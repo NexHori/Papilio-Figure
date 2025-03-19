@@ -41,7 +41,7 @@ Before setting up this project, ensure you have the following installed:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/papilio-figure-collection.git
+    git clone https://github.com/your-username/papilio-figure.git
     cd papilio-figure-collection
     ```
 
